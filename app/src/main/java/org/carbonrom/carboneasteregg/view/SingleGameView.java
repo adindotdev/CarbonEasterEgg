@@ -91,9 +91,9 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
         mStopwatch = new Chronometer(context);
         mScreenHeight = screenHeight;
         mScreenWidth = screenWidth;
-        mGreyDot = getResources().getDrawable(R.drawable.ic_dot_sprite_grey, context.getTheme());
-        mBlueDot = getResources().getDrawable(R.drawable.ic_dot_sprite_blue, context.getTheme());
-        mGreenDot = getResources().getDrawable(R.drawable.ic_dot_sprite_green, context.getTheme());
+        mGreyDot = getResources().getDrawable(R.drawable.ic_dot_sprite_grey, null);
+        mBlueDot = getResources().getDrawable(R.drawable.ic_dot_sprite_blue, null);
+        mGreenDot = getResources().getDrawable(R.drawable.ic_dot_sprite_green, null);
         mCountdown = getResources().getString(R.string.game_waiting);
         setupGame();
     }
