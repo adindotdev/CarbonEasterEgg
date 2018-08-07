@@ -17,7 +17,6 @@
 package org.carbonrom.carboneasteregg;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,15 +24,12 @@ import android.util.Log;
 import android.view.Display;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import org.carbonrom.carboneasteregg.thread.GameThread;
 import org.carbonrom.carboneasteregg.view.SingleGameView;
 
 
 public class CarbonEasterEgg extends Activity {
-    private LinearLayout mLinearLayout;
     private SingleGameView mSingleGameView;
     private GameThread mGameThread;
 
@@ -52,18 +48,11 @@ public class CarbonEasterEgg extends Activity {
             screenHeight = size.x;
             screenWidth = size.y;
         }
-        mLinearLayout = new LinearLayout(this);
-        mLinearLayout.setLayoutParams(new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.MATCH_PARENT
-        ));
-        mLinearLayout.setBackgroundColor(Color.WHITE);
         mSingleGameView = new SingleGameView(this, screenHeight, screenWidth);
         mGameThread = new GameThread(mSingleGameView.getHolder(), mSingleGameView);
         mGameThread.setRunning(true);
         mGameThread.start();
-        mLinearLayout.addView(mSingleGameView);
-        setContentView(mLinearLayout);
+        setContentView(mSingleGameView);
 
         new Handler().postDelayed(() -> {
             startCountdown(3);
