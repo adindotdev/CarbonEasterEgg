@@ -17,7 +17,6 @@
 
 package org.carbonrom.carboneasteregg.view;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -85,7 +84,6 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
     private int mTimeY;
     private int mTimeX;
 
-    @SuppressLint({"ClickableViewAccessibility"})
     public SingleGameView(Context context, int screenHeight, int screenWidth) {
         super(context);
         Log.d("GAME VIEW", "GAME VIEW INITIATED, YEAH!");
@@ -140,7 +138,6 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
         mStopwatch.stop();
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int actionIndex = event.getActionIndex();
